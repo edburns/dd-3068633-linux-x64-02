@@ -15,6 +15,10 @@ Describe 'Get-Fibonacci' {
     It 'returns the correct value for a representative N' {
         Get-Fibonacci -N 10 | Should -Be 55
     }
+
+    It 'returns values beyond the signed 64-bit range' {
+        Get-Fibonacci -N 93 | Should -Be ([System.Numerics.BigInteger]::Parse('12200160415121876738'))
+    }
 }
 
 Describe 'math-tool.ps1 direct CLI execution' {
@@ -37,5 +41,12 @@ Describe 'math-tool.ps1 direct CLI execution' {
         $LASTEXITCODE | Should -Be 0
         @($output).Count | Should -Be 1
         @($output)[0] | Should -Be 'Fibonacci(10) = 55'
+    }
+
+    It 'prints a result beyond the signed 64-bit range' {
+        $output = & pwsh -NoLogo -NoProfile -File $script:ScriptPath -N 93
+        $LASTEXITCODE | Should -Be 0
+        @($output).Count | Should -Be 1
+        @($output)[0] | Should -Be 'Fibonacci(93) = 12200160415121876738'
     }
 }
