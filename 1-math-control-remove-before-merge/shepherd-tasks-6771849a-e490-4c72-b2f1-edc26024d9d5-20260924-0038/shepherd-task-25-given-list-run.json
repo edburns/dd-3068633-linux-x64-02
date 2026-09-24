@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "shepherdTaskVersion": "1.0.4",
+  "campaignCreatedWithVersion": "1.0.4",
+  "stageOutcomeProtocolVersion": 1,
+  "campaignId": "6771849a-e490-4c72-b2f1-edc26024d9d5",
+  "campaignMetadataDirectory": "1-math-control-remove-before-merge",
+  "repository": "edburns/dd-3068633-linux-x64-02",
+  "baseBranch": "experiment/shepherd-control",
+  "lessonPropagation": "off",
+  "taskIssues": [
+    2,
+    3
+  ],
+  "startedAt": "2026-09-24T00:38:53Z",
+  "completedAt": "2026-09-24T01:14:54Z",
+  "exitCode": 0,
+  "status": "succeeded"
+}
